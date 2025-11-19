@@ -365,10 +365,19 @@ public class Bridge implements RfidEventsListener {
             }
         } catch (InvalidUsageException | OperationFailureException e) {
             System.err.println("[rfid-bridge] Reader connect/login failed: " + e.getMessage());
+            System.err.println("[rfid-bridge] Exception class: " + e.getClass().getName());
+            System.err.println("[rfid-bridge] Stack trace:");
+            e.printStackTrace(System.err);
+            if (e.getCause() != null) {
+                System.err.println("[rfid-bridge] Caused by: " + e.getCause().getMessage());
+                e.getCause().printStackTrace(System.err);
+            }
             safeDisconnect(newReader, newManager);
             throw e;
         } catch (RuntimeException e) {
             System.err.println("[rfid-bridge] Unexpected error during connect: " + e.getMessage());
+            System.err.println("[rfid-bridge] Stack trace:");
+            e.printStackTrace(System.err);
             safeDisconnect(newReader, newManager);
             throw e;
         }

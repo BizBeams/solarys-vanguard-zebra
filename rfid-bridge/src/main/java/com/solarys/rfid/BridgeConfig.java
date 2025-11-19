@@ -67,8 +67,8 @@ final class BridgeConfig {
         JsonNode fileNode = readConfigNode(mapper, env);
         String host = pickString(env, fileNode, "ZEBRA_READER_HOST", "host", null);
         int port = pickInt(env, fileNode, "ZEBRA_READER_PORT", "port", 5084);
-        String username = pickString(env, fileNode, "ZEBRA_READER_USERNAME", "admin", null);
-        String password = pickString(env, fileNode, "ZEBRA_READER_PASSWORD", "Nik4stk123!", null);
+        String username = pickString(env, fileNode, "ZEBRA_READER_USERNAME", "username", null);
+        String password = pickString(env, fileNode, "ZEBRA_READER_PASSWORD", "password", null);
         boolean forceLogin = pickBoolean(env, fileNode, "ZEBRA_READER_FORCE_LOGIN", "forceLogin", true);
         boolean auto = pickBoolean(env, fileNode, "ZEBRA_READER_AUTO_INVENTORY", "autoStartInventory", true);
         int reconnect = pickInt(env, fileNode, "ZEBRA_READER_RECONNECT_MS", "reconnectDelayMs", 5000);

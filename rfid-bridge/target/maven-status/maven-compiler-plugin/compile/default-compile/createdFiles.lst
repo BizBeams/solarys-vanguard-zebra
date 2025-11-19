@@ -1,4 +1,4 @@
-com/solarys/rfid/BridgeState.class
-com/solarys/rfid/BridgeEmitter.class
-com/solarys/rfid/Bridge.class
-com/solarys/rfid/BridgeConfig.class
+com\solarys\rfid\BridgeEmitter.class
+com\solarys\rfid\Bridge.class
+com\solarys\rfid\BridgeState.class
+com\solarys\rfid\BridgeConfig.class
