@@ -27,3 +27,13 @@ popd >/dev/null
 mkdir -p "${DIST_DIR}"
 cp "${ARTIFACT}" "${OUTPUT}"
 echo "Bridge jar copied to ${OUTPUT}"
+
+# Embed the Zebra SDK classes so the jar runs standalone.
+TMP_DIR="$(mktemp -d)"
+(
+  cd "${TMP_DIR}"
+  jar xf "${BRIDGE_DIR}/lib/Symbol.RFID.API3.jar"
+  rm -rf META-INF
+  jar uf "${OUTPUT}" .
+)
+rm -rf "${TMP_DIR}"

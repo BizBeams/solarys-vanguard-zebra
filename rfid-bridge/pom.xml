@@ -57,6 +57,14 @@
                             <mainClass>com.solarys.rfid.Bridge</mainClass>
                         </manifest>
                     </archive>
+                    <dependencySets>
+                        <dependencySet>
+                            <useProjectArtifact>true</useProjectArtifact>
+                            <unpack>true</unpack>
+                            <scope>runtime</scope>
+                            <includeSystemScope>true</includeSystemScope>
+                        </dependencySet>
+                    </dependencySets>
                 </configuration>
                 <executions>
                     <execution>
